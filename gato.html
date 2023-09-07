@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinícius</title>
+    <style>
+        body {
+            animation: bgChange 2s infinite alternate, colorChange 4s infinite alternate;
+            background-color: black;
+            color: red;
+            margin: 0 auto;
+            padding: 0; }
+        .centrar {
+            text-align: center; }
+        #hidden {
+            display: none;
+            max-height: 100vh; }
+        #aviso {
+            position: relative;
+            left: 14%; }
+        img {
+            max-height: 100vh;
+            margin: 0 auto; }
+        @keyframes bgChange {
+            0% { backround-color: #000000; }
+            100% { background-color: #111111; }
+        }
+        @keyframes colorChange {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: lightgreen; }
+            80% { color: cyan; }
+            100% { color: blue; }
+        }
+    </style>
+    <audio id="audio">
+        <source src="https://drive.google.com/uc?id=15JhAxQ_Qf6wsnzF7XOFGqDLOArw1wHSb" type="audio/mpeg">
+    </audio>
+    <script>
+        function mostrar() {
+            let hidden = document.getElementById('hidden')
+            let shown = document.getElementById('shown')
+            hidden.style.display = "block"
+            shown.style.display = "none"
+            var audio = document.getElementById("audio");
+            //setInterval(function(){ audio.play(); }, 3000)
+            audio.loop = true;
+            audio.play();
+        }
+    </script>
+</head>
+<body>
+    <div class="centrar" id="shown">
+        <h4 id="aviso">Não clique no gato ⬇️</h4>
+        <a onClick="mostrar()">
+            <img src="https://i.pinimg.com/originals/86/e1/38/86e138155af075ae657cc381bc3952a3.png">
+        </a>
+    </div>
+    <div class="centrar" class="fit" id="hidden">
+        <img width="100%" src="https://i.kym-cdn.com/photos/images/newsfeed/001/741/230/b06.jpg">
+    </div>
+</body>
+</html>
